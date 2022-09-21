@@ -1,4 +1,5 @@
-import ProductItem from "../../core/components/ProductItem";
+import ProductItem from "core/components/ProductItem";
+import { useSelector } from "react-redux";
 
 const products = [
   {
@@ -32,6 +33,11 @@ const products = [
 ];
 
 const ListProduct = () => {
+  const loggedInUser = useSelector((state) => state.login);
+  console.log(
+    "🚀 ~ file: ListProduct.js ~ line 37 ~ ListProduct ~ loggedInUser",
+    loggedInUser
+  );
   return (
     <div>
       {products &&
